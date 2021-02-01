@@ -1,22 +1,20 @@
 # This is a first homework
 
-name: NMedia_CI
+name: CI
 
-# Controls when the action will run. 
 on:
- 
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 
- 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+
     steps:
       - name: Checkout Code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Build
         run: |
