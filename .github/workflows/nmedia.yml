@@ -1,6 +1,6 @@
 # This is a first homework
 
-name: NMedia CI
+name: NMedia_CI
 
 # Controls when the action will run. 
 on:
