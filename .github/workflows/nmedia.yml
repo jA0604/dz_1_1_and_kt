@@ -1,0 +1,31 @@
+# This is a first homework
+
+name: NMedia CI
+
+# Controls when the action will run. 
+on:
+ 
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build --info
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+                    
